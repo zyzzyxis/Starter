@@ -30,7 +30,13 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :development do
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 
+  'master'
+
+group :development do 
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'pry-rails'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
