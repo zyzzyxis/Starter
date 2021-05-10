@@ -1,17 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { Menu } from 'semantic-ui-react'
 
 const NavBar = () => {
+  const {pathname} = useLocation()
   return (
-    <div style={{display:'flex'}}>
+    <Menu>
       <Link to='/'>
-        Home
+         <Menu.Item active={ pathname == '/'}>
+           Home
+         </Menu.Item>
       </Link>
       <Link to='/about'>
-        About
+        <Menu.Item active={ pathname == '/about'}>
+          About
+        </Menu.Item>
       </Link>
-
-     </div>
+     </Menu>
   )
 }
 
